@@ -1,6 +1,6 @@
-package com.Controllers;
+package com.partnershipmanagement.Controllers;
 
-import com.partnershipmanagement.Entities.Partnership;
+import com.partnershipmanagement.Controllers.Entities.Partnership;
 import com.partnershipmanagement.Repositories.PartnershipRepository;
 import com.partnershipmanagement.Services.PartnershipService;
 import org.springframework.beans.factory.annotation.Autowired;

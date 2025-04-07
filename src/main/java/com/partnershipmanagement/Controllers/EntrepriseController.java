@@ -1,7 +1,6 @@
-package com.Controllers;
+package com.partnershipmanagement.Controllers;
 
-import com.partnershipmanagement.Entities.Entreprise;
-import com.partnershipmanagement.Repositories.EntrepriseRepository;
+import com.partnershipmanagement.Controllers.Entities.Entreprise;
 import com.partnershipmanagement.Services.EntrepriseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

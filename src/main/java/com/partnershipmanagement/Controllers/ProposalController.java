@@ -1,6 +1,6 @@
 package com.partnershipmanagement.Controllers;
 
-import com.partnershipmanagement.Controllers.Entities.Proposal;
+import com.partnershipmanagement.Entities.Proposal;
 import com.partnershipmanagement.Services.ProposalService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

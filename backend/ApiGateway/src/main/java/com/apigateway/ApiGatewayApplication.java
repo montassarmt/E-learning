@@ -18,16 +18,23 @@ public class ApiGatewayApplication {
     @Bean
     public RouteLocator routes(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("Partnership-Management", r -> r.path("/partnerships/**")
-                        .uri("lb://Partnership-Management"))
-                .route("Partnership-Management", r -> r.path("/entreprise/**")
-                        .uri("lb://Partnership-Management"))
-                .route("hackathon-Management", r -> r.path("/api/hackathons/**")
+
+                //  Hackathons
+                .route("hackathon-route", r -> r.path("/api/hackathons/**")
                         .uri("lb://backend2"))
 
-                // 🔹 Séances de coaching
-                .route("coaching-Management", r -> r.path("/api/seances/**")
+                //  Participations
+                .route("participation-route", r -> r.path("/api/participations/**")
                         .uri("lb://backend2"))
+
+                //  Séances de coaching
+                .route("seance-route", r -> r.path("/api/seances/**")
+                        .uri("lb://backend2"))
+
+                //  Utilisateurs
+                .route("user-route", r -> r.path("/api/v1/users/**")
+                        .uri("lb://backend2"))
+
                 .build();
     }
 

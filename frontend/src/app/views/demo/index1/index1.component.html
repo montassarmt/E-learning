@@ -1,0 +1,76 @@
+<app-menu
+  navClassName="container-fluid px-3 px-xl-5"
+  menuClassName="me-auto"
+  [showCategory]="true"
+  [showMegaMenu]="true"
+  [SearchWithText]="true"
+/>
+
+<main>
+    <index2-banner />
+
+
+  <!-- =======================
+Main Banner START -->
+
+  <!-- =======================
+Main Banner END -->
+
+
+  <!-- =======================
+Counter START -->
+  <index1-counter />
+  <!-- =======================
+Counter END -->
+
+  <!-- =======================
+Popular course START -->
+  <index1-popular-course />
+  <!-- =======================
+Popular course END -->
+    <index1-live-course />
+
+  <!-- =======================
+Action box START -->
+  <index1-action-box />
+  <!-- =======================
+Action box END -->
+
+  <!-- =======================
+Trending courses START -->
+  <index1-trending />
+  <!-- =======================
+Trending courses END -->
+
+  <!-- =======================
+
+Reviews END -->
+    <div class="container">
+       
+
+        <div class="main">
+            <div class="new-meeting">
+                <button (click)="handleNewMeeting()">Create a New Meeting</button>
+                <div class="join-meeting">
+                    <input type="text" placeholder="Meeting ID" [(ngModel)]="meetingName">
+                    <button (click)="handleJoinMeeting()">Join</button>
+                </div>
+            </div>
+            <div class="connected-users">
+                <button (click)="handleLogout()">Logout</button>
+                <h2>Connected Users</h2>
+                <ul>
+                    <li *ngFor="let user of users">
+                        <div>
+                            <i class="fa fa-user-circle"></i>
+                            {{ user.username }} <i class="user-email">({{ user.email }})</i>
+                        </div>
+                        <i class="fa fa-lightbulb-o" [ngClass]="user.status === 'online' ? 'online' : 'offline'"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+<app-footer />

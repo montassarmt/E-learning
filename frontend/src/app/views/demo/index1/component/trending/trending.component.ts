@@ -111,7 +111,7 @@ export class TrendingComponent implements OnInit {
 
     action.subscribe({
       next: () => {
-        this.loadParticipation();
+        this.loadParticipation(); // ✅ Toujours recharger les participations depuis le backend
       },
       error: (err) => {
         console.error('💥 Erreur brute : ', err);
@@ -120,19 +120,14 @@ export class TrendingComponent implements OnInit {
 
         if (status === 409 || message.includes('Already registered')) {
           alert('⚠️ Vous êtes déjà inscrit à ce hackathon.');
-
-          // 🔒 Mise à jour locale immédiate (si pas déjà là)
-          if (!this.participatingIds.includes(h.id!)) {
-            this.participatingIds.push(h.id!);
-            this.cdr.detectChanges();
-          }
-
+          // ❌ Pas de mise à jour manuelle ici
         } else {
           alert('❌ Une erreur est survenue lors de la participation.');
         }
       }
     });
   }
+
 
   getHackathonImage(nom: string): string {
     const images: Record<string, string> = {

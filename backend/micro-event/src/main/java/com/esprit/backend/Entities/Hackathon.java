@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Hackathon {
@@ -18,6 +19,9 @@ public class Hackathon {
     private LocalDateTime dateDebut; // ✅ Ajout de la date de début
     private LocalDateTime dateFin;// ✅ Ajout de la date de fin
     private String googleCalendarEventId;
+    @OneToMany(mappedBy = "hackathon", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Participation> participations;
+
 
 
     public Hackathon() {

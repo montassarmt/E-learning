@@ -1,4 +1,4 @@
-package com.partnershipmanagement.Controllers;
+package com.Controllers;
 
 import com.partnershipmanagement.Entities.Partnership;
 import com.partnershipmanagement.Repositories.PartnershipRepository;

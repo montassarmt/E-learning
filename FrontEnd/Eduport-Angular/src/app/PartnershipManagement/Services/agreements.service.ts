@@ -9,7 +9,7 @@ import { AcceptanceStatus } from '../Models/AcceptanceStatus';
 })
 export class AgreementsService {
 
-  private apiUrl = `http://localhost:8088/Partnership/assessments`; // Assuming you have the API base URL in your environment file
+  private apiUrl = `http://localhost:8085/Partnership/assessments`; // Assuming you have the API base URL in your environment file
 
   constructor(private http: HttpClient) {}
 

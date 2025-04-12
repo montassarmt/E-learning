@@ -4,12 +4,10 @@ package com.partnershipmanagement.Services;
 import com.partnershipmanagement.configurations.ZoomConfigurations;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
 
 @RequiredArgsConstructor
 @Service
 public class ZoomService {
-    private final WebClient webClient;
     private final ZoomConfigurations zoomConfig;
 
    /* public String createMeeting(MeetingRequest request) {

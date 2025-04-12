@@ -93,7 +93,7 @@ public class PartnershipService implements IPartnershipService {
         }
 
         //  Check if any existing partnership for this proposal is already ACCEPTED
-        boolean isAccepted = partnershipRepository.existsByProposalIdProposalAndPartnershipStatus(proposalId, PartnershipStatus.Approved);
+        boolean isAccepted = partnershipRepository.existsByProposalIdProposalAndPartnershipStatus(proposalId, PartnershipStatus.APPROVED);
 
         if (isAccepted) {
             // Update proposal status to "FULFILLED" and prevent further applications
@@ -106,7 +106,7 @@ public class PartnershipService implements IPartnershipService {
         Partnership partnership = new Partnership();
         partnership.setEntreprise(entreprise);
         partnership.setProposals(proposal);
-        partnership.setPartnershipStatus(PartnershipStatus.pending);
+        partnership.setPartnershipStatus(PartnershipStatus.PENDING);
 
         return partnershipRepository.save(partnership);
     }
@@ -143,13 +143,13 @@ public class PartnershipService implements IPartnershipService {
         }
 
         // Accept the selected partnership
-        partnership.setPartnershipStatus(PartnershipStatus.Approved);
+        partnership.setPartnershipStatus(PartnershipStatus.APPROVED);
 
         // Reject all other partnerships for the same proposal
         List<Partnership> otherPartnerships = partnershipRepository.findByProposal(proposal);
         for (Partnership p : otherPartnerships) {
             if (p.getIdPartnership() != partnershipId) {
-                p.setPartnershipStatus(PartnershipStatus.Rejected);
+                p.setPartnershipStatus(PartnershipStatus.REJECTED);
             }
         }
 

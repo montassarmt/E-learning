@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ScrapingService {
-  private apiUrl = 'http://localhost:8088/Partnership/scraping'; // URL of the Flask API
+  private apiUrl = 'http://localhost:8085/Partnership/scraping'; // URL of the Flask API
 
   constructor(private http: HttpClient) { }
 

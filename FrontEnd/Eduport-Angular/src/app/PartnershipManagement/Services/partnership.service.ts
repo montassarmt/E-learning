@@ -8,7 +8,7 @@ import { Partnership } from '../Models/Partnership';
 })
 export class PartnershipService {
 
-  private apiUrl = 'http://localhost:8088/Partnership/partnerships'; // Adjust with your backend URL
+  private apiUrl = 'http://localhost:8085/Partnership/partnerships'; // Adjust with your backend URL
   ; // Base URL for your API
 
   constructor(private http: HttpClient) { }

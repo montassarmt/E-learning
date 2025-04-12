@@ -7,7 +7,7 @@ import { Entreprise } from '../Models/Entreprise';
   providedIn: 'root'
 })
 export class EntrepriseService {
-  private apiUrl = 'http://localhost:8088/Partnership/entreprises'; // Replace with your backend URL
+  private apiUrl = 'http://localhost:8085/Partnership/entreprises'; // Replace with your backend URL
 
   constructor(private http: HttpClient) {}
 

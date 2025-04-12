@@ -51,6 +51,15 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.0.0</version> <!-- Match Spring Boot 3.x -->
+            <scope>provided</scope>
+        </dependency>
+
+
     </dependencies>
     <dependencyManagement>
         <dependencies>

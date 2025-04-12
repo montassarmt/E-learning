@@ -9,7 +9,7 @@ import { Proposal } from '../Models/Proposal';
 })
 export class ProposalService {
 
-  private apiUrl = 'http://localhost:8088/Partnership/proposals'; // Adjust with your backend URL
+  private apiUrl = 'http://localhost:8085/Partnership/proposals'; // Adjust with your backend URL
 
   constructor(private http: HttpClient) {}
 
